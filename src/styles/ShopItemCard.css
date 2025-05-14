@@ -1,0 +1,37 @@
+.shop-item-card {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 25rem;
+  box-shadow: 1px 1px 12px rgb(1, 1, 1, 0.3);
+  border-radius: 7px;
+  padding: 2rem;
+}
+
+.shop-item-card img {
+  width: 70%;
+  object-fit: contain;
+  align-self: center;
+}
+
+.shop-item-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.shop-item-card .description {
+  font-size: 1.1rem;
+}
+
+.shop-item-card .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.shop-item-card .footer {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 1.5rem;
+  width: 100%;
+}

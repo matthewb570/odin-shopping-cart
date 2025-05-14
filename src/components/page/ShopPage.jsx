@@ -1,6 +1,7 @@
 import useShopItems from "../../hooks/useShopItems";
 import StringUtils from "../../utils/StringUtils";
 import ShopItemCard from "../card/ShopItemCard";
+import "../../styles/ShopPage.css";
 
 export default function ShopPage() {
   const { shopItems, shopItemsIsLoading, shopItemsError } = useShopItems();

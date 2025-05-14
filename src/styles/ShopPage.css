@@ -1,0 +1,9 @@
+.shop-page {
+  columns: 3;
+}
+
+.shop-page .shop-item-card {
+  page-break-inside: avoid;
+  break-inside: avoid-column;
+  margin-bottom: 2rem;
+}

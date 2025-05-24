@@ -12,10 +12,10 @@ export default function useShopItems() {
       setShopItemsError("");
 
       try {
-        const response = await fetch("https://fakestoreapi.com/products");
+        const response = await fetch("https://dummyjson.com/products");
         if (response.ok) {
           const json = await response.json();
-          setShopItems(json);
+          setShopItems(json.products);
         } else {
           throw new Error("Response was not ok");
         }

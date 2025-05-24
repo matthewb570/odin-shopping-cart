@@ -19,7 +19,13 @@ export default function ShopPage() {
                 title={shopItem.title}
                 price={shopItem.price}
                 description={shopItem.description}
-                imageUrl={shopItem.image}
+                imageUrl={
+                  shopItem.images !== undefined &&
+                  shopItem.images !== null &&
+                  shopItem.images.length > 0
+                    ? shopItem.images[0]
+                    : ""
+                }
               />
             ))}
     </div>

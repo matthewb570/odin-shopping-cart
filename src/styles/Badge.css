@@ -1,0 +1,26 @@
+.badge {
+  position: relative;
+  width: fit-content;
+}
+
+.badge .badge-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  translate: 40% -40%;
+  scale: 1;
+  background-color: #c1121f;
+  color: white;
+  padding: 0.15rem;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  transition: scale ease-in 0.1s;
+}
+
+.badge .badge-content.hidden {
+  scale: 0;
+}

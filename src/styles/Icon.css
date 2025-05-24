@@ -1,0 +1,11 @@
+.icon {
+  background-color: black;
+  height: 1.5rem;
+  width: 1.5rem;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.icon.shopping-cart {
+  mask-image: url(../assets/cart-outline.svg);
+}

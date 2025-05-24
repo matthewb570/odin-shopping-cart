@@ -1,3 +1,9 @@
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
 button {
   background-color: #669bbc;
   border: none;

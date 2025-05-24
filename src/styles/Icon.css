@@ -4,8 +4,13 @@
   width: 1.5rem;
   mask-repeat: no-repeat;
   mask-position: center;
+  display: inline-block;
 }
 
 .icon.shopping-cart {
   mask-image: url(../assets/cart-outline.svg);
+}
+
+.icon.purse {
+  mask-image: url(../assets/purse.svg);
 }

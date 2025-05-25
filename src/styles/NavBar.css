@@ -32,4 +32,51 @@
 
 .nav-bar .nav-links {
   flex: 1;
+
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-bar .nav-links span {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+  transition: background-color ease 0.3s;
+}
+
+.nav-bar .nav-links a {
+  text-decoration: none;
+  color: #669bbc;
+  position: relative;
+  transition: color ease 0.3s;
+}
+
+.nav-bar .nav-links span:has(a.active) {
+  background-color: #669bbc;
+}
+
+.nav-bar .nav-links a.active {
+  color: white;
+}
+
+.nav-bar .nav-links a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #669bbc;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transition:
+    width ease 0.3s,
+    left ease 0.3s;
+}
+
+.nav-bar .nav-links a:hover::after,
+.nav-bar .nav-links a.active::after {
+  width: 100%;
+  left: 0;
 }

@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   padding: 2rem;
-
+  min-height: calc(100vh - var(--nav-bar-height));
+  box-sizing: border-box;
   background-color: var(--primary-1);
 }
 

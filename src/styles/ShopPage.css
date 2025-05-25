@@ -1,9 +1,14 @@
 .shop-page {
-  columns: 3;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+
+  background-color: var(--primary-1);
 }
 
-.shop-page .shop-item-card {
-  page-break-inside: avoid;
-  break-inside: avoid-column;
-  margin-bottom: 2rem;
+.shop-page .card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }

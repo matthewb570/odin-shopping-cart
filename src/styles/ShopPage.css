@@ -12,4 +12,13 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  transition:
+    opacity ease 0.3s,
+    visibility ease 0.3s;
+  opacity: 1;
+}
+
+.shop-page .card-list.hidden {
+  opacity: 0;
+  visibility: hidden;
 }

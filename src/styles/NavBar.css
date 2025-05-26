@@ -9,7 +9,7 @@
   font-size: 2rem;
   color: #669bbc;
   padding: 0 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
   box-shadow: 1px 1px 12px rgb(1, 1, 1, 0.3);
 }

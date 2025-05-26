@@ -5,6 +5,7 @@
   min-height: calc(100vh - var(--nav-bar-height));
   box-sizing: border-box;
   background-color: var(--primary-1);
+  margin-top: var(--nav-bar-height);
 }
 
 .shop-page .card-list {

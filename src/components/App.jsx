@@ -10,12 +10,12 @@ function App() {
 
   return (
     <>
+      <Outlet context={{ cartItems, setCartItems }} />
       <NavBar
         isCartSideMenuOpen={isCartSideMenuOpen}
         setIsCartSideMenuOpen={setIsCartSideMenuOpen}
         cartItems={cartItems}
       />
-      <Outlet context={{ cartItems, setCartItems }} />
       <CartSideMenu
         isOpen={isCartSideMenuOpen}
         setIsOpen={setIsCartSideMenuOpen}

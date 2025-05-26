@@ -5,9 +5,13 @@ import Badge from "../badge/Badge";
 import { NavLink } from "react-router";
 import RouterConfig from "../../router/RouterConfig";
 
-export default function NavBar({ isCartSideMenuOpen, setIsCartSideMenuOpen }) {
+export default function NavBar({
+  isCartSideMenuOpen,
+  setIsCartSideMenuOpen,
+  cartItems,
+}) {
   return (
-    <div className="nav-bar">
+    <nav className="nav-bar">
       <span>
         <Logo />
       </span>
@@ -20,14 +24,16 @@ export default function NavBar({ isCartSideMenuOpen, setIsCartSideMenuOpen }) {
         </span>
       </span>
       <span>
-        <Badge badgeText="1">
+        <Badge
+          badgeText={`${cartItems !== undefined && cartItems !== null && cartItems.length > 0 ? cartItems.length : ""}`}
+        >
           <CartButton
             isCartSideMenuOpen={isCartSideMenuOpen}
             setIsCartSideMenuOpen={setIsCartSideMenuOpen}
           />
         </Badge>
       </span>
-    </div>
+    </nav>
   );
 }
 

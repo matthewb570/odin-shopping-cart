@@ -13,6 +13,7 @@ function App() {
       <NavBar
         isCartSideMenuOpen={isCartSideMenuOpen}
         setIsCartSideMenuOpen={setIsCartSideMenuOpen}
+        cartItems={cartItems}
       />
       <Outlet context={{ cartItems, setCartItems }} />
       <CartSideMenu

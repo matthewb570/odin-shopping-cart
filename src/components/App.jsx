@@ -14,11 +14,11 @@ function App() {
         isCartSideMenuOpen={isCartSideMenuOpen}
         setIsCartSideMenuOpen={setIsCartSideMenuOpen}
       />
+      <Outlet context={{ cartItems, setCartItems }} />
       <CartSideMenu
         isOpen={isCartSideMenuOpen}
         setIsOpen={setIsCartSideMenuOpen}
       />
-      <Outlet context={{ cartItems, setCartItems }} />
     </>
   );
 }

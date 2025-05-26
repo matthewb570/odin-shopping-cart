@@ -26,13 +26,26 @@
 }
 
 .shop-item-card .price {
+  flex: 1;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.shop-item-card .quantity {
+  width: 3rem;
+}
+
+.shop-item-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .shop-item-card .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 
   margin-top: 1.5rem;
   width: 100%;

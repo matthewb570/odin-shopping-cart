@@ -14,3 +14,11 @@
 .icon.purse {
   mask-image: url(../assets/purse.svg);
 }
+
+.icon.minus {
+  mask-image: url(../assets/minus.svg);
+}
+
+.icon.plus {
+  mask-image: url(../assets/plus.svg);
+}

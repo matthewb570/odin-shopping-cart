@@ -11,6 +11,9 @@
   --cart-side-menu-width: 30rem;
 
   --standard-box-shadow: 1px 1px 12px rgb(1, 1, 1, 0.3);
+
+  --icon-height: 1.5rem;
+  --icon-width: 1.5rem;
 }
 
 body {
@@ -32,4 +35,35 @@ button {
 
 button:hover {
   background-color: #003049;
+}
+
+button.secondary {
+  background-color: white;
+  border: solid 2px var(--primary-1);
+  color: var(--primary-1);
+  transition:
+    color ease 0.15s,
+    background-color ease 0.15s;
+}
+
+button.secondary:hover {
+  color: white;
+  background-color: var(--primary-1);
+}
+
+button.icon-button {
+  width: var(--icon-width);
+  height: var(--icon-height);
+  padding: 0;
+  border-radius: 50%;
+  box-sizing: content-box;
+}
+
+button.icon-button.secondary .icon {
+  background-color: var(--primary-1);
+  transition: background-color ease 0.15s;
+}
+
+button.icon-button.secondary:hover .icon {
+  background-color: white;
 }

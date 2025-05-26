@@ -5,7 +5,7 @@ import Badge from "../badge/Badge";
 import { NavLink } from "react-router";
 import RouterConfig from "../../router/RouterConfig";
 
-export default function NavBar() {
+export default function NavBar({ isCartSideMenuOpen, setIsCartSideMenuOpen }) {
   return (
     <div className="nav-bar">
       <span>
@@ -21,7 +21,10 @@ export default function NavBar() {
       </span>
       <span>
         <Badge badgeText="1">
-          <CartButton />
+          <CartButton
+            isCartSideMenuOpen={isCartSideMenuOpen}
+            setIsCartSideMenuOpen={setIsCartSideMenuOpen}
+          />
         </Badge>
       </span>
     </div>

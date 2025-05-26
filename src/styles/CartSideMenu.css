@@ -1,0 +1,22 @@
+.cart-side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--cart-side-menu-width);
+  height: 100vh;
+  background-color: white;
+  translate: var(--cart-side-menu-width) 0;
+  transition:
+    translate ease 0.5s,
+    visibility ease 0.5s,
+    opacity ease 0.5s;
+  box-shadow: var(--standard-box-shadow);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.cart-side-menu.open {
+  translate: 0;
+  visibility: visible;
+  opacity: 1;
+}

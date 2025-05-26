@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function App() {
   const [isCartSideMenuOpen, setIsCartSideMenuOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
   return (
     <>
@@ -17,7 +18,7 @@ function App() {
         isOpen={isCartSideMenuOpen}
         setIsOpen={setIsCartSideMenuOpen}
       />
-      <Outlet />
+      <Outlet context={{ cartItems, setCartItems }} />
     </>
   );
 }

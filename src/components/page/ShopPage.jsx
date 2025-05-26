@@ -2,9 +2,28 @@ import useShopItems from "../../hooks/useShopItems";
 import StringUtils from "../../utils/StringUtils";
 import ShopItemCard from "../card/ShopItemCard";
 import "../../styles/ShopPage.css";
+import { useOutletContext } from "react-router";
+import CartItem from "../../objects/CartItem";
 
 export default function ShopPage() {
   const { shopItems, shopItemsIsLoading, shopItemsError } = useShopItems();
+
+  const { cartItems, setCartItems } = useOutletContext();
+
+  function handleAddToCart(shopItemId, quantity) {
+    if (quantity > 0) {
+      const existingCartItemIndex = cartItems.findIndex(
+        (cartItem) => cartItem.id === shopItemId,
+      );
+      if (existingCartItemIndex === -1) {
+        setCartItems([...cartItems, new CartItem(shopItemId, quantity)]);
+      } else {
+        const newCartItems = [...cartItems];
+        newCartItems[existingCartItemIndex].quantity += quantity;
+        setCartItems(newCartItems);
+      }
+    }
+  }
 
   return (
     // TODO: Clean up display logic
@@ -21,6 +40,7 @@ export default function ShopPage() {
         {shopItems.map((shopItem) => (
           <ShopItemCard
             key={shopItem.id}
+            id={shopItem.id}
             title={shopItem.title}
             price={shopItem.price}
             description={shopItem.description}
@@ -31,6 +51,7 @@ export default function ShopPage() {
                 ? shopItem.images[0]
                 : ""
             }
+            handleAddToCart={handleAddToCart}
           />
         ))}
       </div>

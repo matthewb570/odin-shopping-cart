@@ -3,7 +3,14 @@ import "../../styles/ShopItemCard.css";
 import NumberUtils from "../../utils/NumberUtils";
 import NumberInput from "../input/NumberInput";
 
-export default function ShopItemCard({ title, price, description, imageUrl }) {
+export default function ShopItemCard({
+  id,
+  title,
+  price,
+  description,
+  imageUrl,
+  handleAddToCart,
+}) {
   const [quantity, setQuantity] = useState(0);
 
   // TODO: Revise as needed
@@ -15,7 +22,9 @@ export default function ShopItemCard({ title, price, description, imageUrl }) {
       <div className="footer">
         <div className="price">{NumberUtils.formatAsDollars(price)}</div>
         <NumberInput value={quantity} setValue={setQuantity} />
-        <button>Add to Cart</button>
+        <button onClick={() => handleAddToCart(id, quantity)}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );

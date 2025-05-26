@@ -19,6 +19,7 @@ function App() {
       <CartSideMenu
         isOpen={isCartSideMenuOpen}
         setIsOpen={setIsCartSideMenuOpen}
+        cartItems={cartItems}
       />
     </>
   );

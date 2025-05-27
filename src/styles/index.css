@@ -24,17 +24,20 @@ body {
 
 button {
   background-color: #669bbc;
-  border: none;
+  border: solid 2px var(--primary-1);
   cursor: pointer;
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 7px;
-  transition: background-color ease-out 0.15s;
+  transition:
+    background-color ease-out 0.15s,
+    border-color ease-out 0.15s;
 }
 
 button:hover {
-  background-color: #003049;
+  background-color: var(--primary-2);
+  border-color: var(--primary-2);
 }
 
 button.secondary {

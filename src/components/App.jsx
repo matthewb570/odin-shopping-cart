@@ -32,6 +32,7 @@ function App() {
         setIsOpen={setIsCartSideMenuOpen}
         shopItems={shopItems}
         cartItems={cartItems}
+        setCartItems={setCartItems}
       />
     </>
   );

@@ -5,10 +5,17 @@ export default function CartSideMenu({
   isOpen,
   setIsOpen,
   cartItems,
+  setCartItems,
   shopItems,
 }) {
   const cartItemsLength =
     cartItems !== undefined && cartItems !== null ? cartItems.length : 0;
+
+  function handleChangeItemQuantity(id, quantity) {
+    const newCartItems = [...cartItems];
+    newCartItems.find((cartItem) => cartItem.id === id).quantity = quantity;
+    setCartItems(newCartItems);
+  }
 
   return (
     <section className={`cart-side-menu ${isOpen ? "open" : ""}`}>
@@ -30,9 +37,13 @@ export default function CartSideMenu({
 
               return (
                 <CartShopItemCard
+                  key={cartItem.id}
                   title={shopItem.title}
                   price={shopItem.price}
                   quantity={cartItem.quantity}
+                  setQuantity={(quantity) =>
+                    handleChangeItemQuantity(cartItem.id, quantity)
+                  }
                 />
               );
             })}

@@ -20,6 +20,7 @@
   border-radius: 0.75rem;
   transition: scale ease-in 0.1s;
   font-size: 1rem;
+  z-index: 1;
 }
 
 .badge .badge-content.hidden {

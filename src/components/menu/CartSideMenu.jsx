@@ -66,11 +66,11 @@ export default function CartSideMenu({
           </div>
         )}
       </div>
-      <div className="footer">
-        {cartItems.length > 0 && (
+      {cartItems.length > 0 && (
+        <div className="footer">
           <button>{`Proceed to Checkout (${NumberUtils.formatAsDollars(cartSubtotal)})`}</button>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 }

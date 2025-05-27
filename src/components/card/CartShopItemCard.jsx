@@ -7,7 +7,7 @@ export default function CartShopItemCard({
   price,
   quantity,
   setQuantity,
-  handleDelete,
+  handleRemove,
 }) {
   return (
     <div className="cart-shop-item-card">
@@ -16,7 +16,9 @@ export default function CartShopItemCard({
       </div>
       <div className="footer">
         <NumberInput value={quantity} setValue={setQuantity} />
-        <button className="secondary">Remove</button>
+        <button className="secondary" onClick={handleRemove}>
+          Remove
+        </button>
       </div>
     </div>
   );

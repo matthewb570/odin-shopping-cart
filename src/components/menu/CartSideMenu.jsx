@@ -17,6 +17,15 @@ export default function CartSideMenu({
     setCartItems(newCartItems);
   }
 
+  function handleRemove(id) {
+    const newCartItems = [...cartItems];
+    const indexToRemove = newCartItems.findIndex(
+      (cartItem) => cartItem.id === id,
+    );
+    newCartItems.splice(indexToRemove, 1);
+    setCartItems(newCartItems);
+  }
+
   return (
     <section className={`cart-side-menu ${isOpen ? "open" : ""}`}>
       <div className="header">
@@ -44,6 +53,7 @@ export default function CartSideMenu({
                   setQuantity={(quantity) =>
                     handleChangeItemQuantity(cartItem.id, quantity)
                   }
+                  handleRemove={() => handleRemove(cartItem.id)}
                 />
               );
             })}

@@ -1,4 +1,5 @@
 import "../../styles/CartSideMenu.css";
+import NumberUtils from "../../utils/NumberUtils";
 import CartShopItemCard from "../card/CartShopItemCard";
 
 export default function CartSideMenu({
@@ -10,6 +11,11 @@ export default function CartSideMenu({
 }) {
   const cartItemsLength =
     cartItems !== undefined && cartItems !== null ? cartItems.length : 0;
+
+  const cartSubtotal = cartItems.reduce((total, cartItem) => {
+    const shopItem = shopItems.find((shopItem) => shopItem.id === cartItem.id);
+    return total + shopItem.price * cartItem.quantity;
+  }, 0);
 
   function handleChangeItemQuantity(id, quantity) {
     const newCartItems = [...cartItems];
@@ -61,7 +67,7 @@ export default function CartSideMenu({
         )}
       </div>
       <div className="footer">
-        <button>Proceed to Checkout</button>
+        <button>{`Proceed to Checkout (${NumberUtils.formatAsDollars(cartSubtotal)})`}</button>
       </div>
     </section>
   );

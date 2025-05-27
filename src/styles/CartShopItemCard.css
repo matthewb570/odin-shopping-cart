@@ -1,0 +1,23 @@
+.cart-shop-item-card {
+  border: solid 2px var(--primary-1);
+  border-radius: 7px;
+  padding: 1rem;
+}
+
+.cart-shop-item-card .header {
+  margin-bottom: 1rem;
+}
+
+.cart-shop-item-card .title {
+  margin: 0;
+  padding: 0;
+}
+
+.cart-shop-item-card .footer {
+  display: flex;
+  align-items: center;
+}
+
+.cart-shop-item-card .footer .number-input {
+  flex: 1;
+}

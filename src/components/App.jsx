@@ -3,14 +3,25 @@ import "../styles/App.css";
 import NavBar from "./navigation/NavBar";
 import CartSideMenu from "./menu/CartSideMenu";
 import { useState } from "react";
+import useShopItems from "../hooks/useShopItems";
 
 function App() {
   const [isCartSideMenuOpen, setIsCartSideMenuOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
+  const { shopItems, shopItemsIsLoading, shopItemsError } = useShopItems();
+
   return (
     <>
-      <Outlet context={{ cartItems, setCartItems }} />
+      <Outlet
+        context={{
+          shopItems,
+          shopItemsIsLoading,
+          shopItemsError,
+          cartItems,
+          setCartItems,
+        }}
+      />
       <NavBar
         isCartSideMenuOpen={isCartSideMenuOpen}
         setIsCartSideMenuOpen={setIsCartSideMenuOpen}
@@ -19,6 +30,7 @@ function App() {
       <CartSideMenu
         isOpen={isCartSideMenuOpen}
         setIsOpen={setIsCartSideMenuOpen}
+        shopItems={shopItems}
         cartItems={cartItems}
       />
     </>

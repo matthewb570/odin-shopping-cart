@@ -1,6 +1,12 @@
 import "../../styles/CartSideMenu.css";
+import CartShopItemCard from "../card/CartShopItemCard";
 
-export default function CartSideMenu({ isOpen, setIsOpen, cartItems }) {
+export default function CartSideMenu({
+  isOpen,
+  setIsOpen,
+  cartItems,
+  shopItems,
+}) {
   const cartItemsLength =
     cartItems !== undefined && cartItems !== null ? cartItems.length : 0;
 
@@ -16,7 +22,21 @@ export default function CartSideMenu({ isOpen, setIsOpen, cartItems }) {
             <span>Looks like your cart is empty.</span>
           </div>
         ) : (
-          ""
+          <div className="cart-items">
+            {cartItems.map((cartItem) => {
+              const shopItem = shopItems.find(
+                (shopItem) => shopItem.id === cartItem.id,
+              );
+
+              return (
+                <CartShopItemCard
+                  title={shopItem.title}
+                  price={shopItem.price}
+                  quantity={cartItem.quantity}
+                />
+              );
+            })}
+          </div>
         )}
       </div>
       <div className="footer">

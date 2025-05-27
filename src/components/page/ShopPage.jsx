@@ -1,4 +1,3 @@
-import useShopItems from "../../hooks/useShopItems";
 import StringUtils from "../../utils/StringUtils";
 import ShopItemCard from "../card/ShopItemCard";
 import "../../styles/ShopPage.css";
@@ -6,9 +5,15 @@ import { useOutletContext } from "react-router";
 import CartItem from "../../objects/CartItem";
 
 export default function ShopPage() {
-  const { shopItems, shopItemsIsLoading, shopItemsError } = useShopItems();
+  const {
+    shopItems,
+    shopItemsIsLoading,
+    shopItemsError,
+    cartItems,
+    setCartItems,
+  } = useOutletContext();
 
-  const { cartItems, setCartItems } = useOutletContext();
+  // TODO: Re-add page fade in
 
   function handleAddToCart(shopItemId, quantity) {
     if (quantity > 0) {

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import App from "../components/App";
 import ShopPage from "../components/page/ShopPage";
+import HomePage from "../components/page/HomePage";
 
 const HOME_PAGE_PATH = "/";
 const SHOP_PAGE_PATH = "/shop";
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>Home Page</div>,
+        element: <HomePage />,
       },
       {
         path: SHOP_PAGE_PATH,

@@ -1,0 +1,54 @@
+.home-page {
+  margin-top: var(--nav-bar-height);
+  background-image: url(../assets/storefront_md.jpg);
+  height: calc(100vh - var(--nav-bar-height));
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-page .filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--nav-bar-height));
+  backdrop-filter: blur(10px);
+}
+
+.home-page .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  font-size: 4rem;
+  color: var(--soft-white);
+  background-color: var(--primary-1);
+  padding: 8rem;
+  border-radius: 10px;
+}
+
+.home-page .content a {
+  text-decoration: none;
+  color: var(--soft-white);
+  background-color: var(--primary-1);
+  border: 2px solid var(--soft-white);
+  border-radius: 7px;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  transition:
+    background-color ease 0.2s,
+    scale ease 0.2s,
+    border-color ease 0.2s;
+}
+
+.home-page .content a:hover {
+  background-color: var(--primary-2);
+  scale: 1.07;
+  border-color: var(--primary-2);
+}
+
+.home-page .content a:active {
+  background-color: var(--primary-2);
+  scale: 1;
+  border-color: var(--primary-2);
+}

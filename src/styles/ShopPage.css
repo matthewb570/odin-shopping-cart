@@ -23,3 +23,13 @@
   opacity: 0;
   visibility: hidden;
 }
+
+@media (width < 690px) {
+  .shop-page {
+    padding: var(--mobile-border-padding);
+  }
+
+  .shop-page .card-list {
+    gap: var(--mobile-border-padding);
+  }
+}

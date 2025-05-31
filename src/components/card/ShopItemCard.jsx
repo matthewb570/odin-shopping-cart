@@ -21,10 +21,12 @@ export default function ShopItemCard({
       <div className="description">{description}</div>
       <div className="footer">
         <div className="price">{NumberUtils.formatAsDollars(price)}</div>
-        <NumberInput value={quantity} setValue={setQuantity} />
-        <button onClick={() => handleAddToCart(id, quantity)}>
-          Add to Cart
-        </button>
+        <div className="quantity-add">
+          <NumberInput value={quantity} setValue={setQuantity} />
+          <button onClick={() => handleAddToCart(id, quantity)}>
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );

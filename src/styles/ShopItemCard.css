@@ -50,3 +50,20 @@
   margin-top: 1.5rem;
   width: 100%;
 }
+
+.shop-item-card .footer .quantity-add {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (width < 690px) {
+  .shop-item-card {
+    padding: var(--mobile-border-padding);
+  }
+
+  .shop-item-card .footer .quantity-add {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

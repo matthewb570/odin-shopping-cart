@@ -19,12 +19,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8rem;
+  gap: 5rem;
   font-size: 4rem;
   color: var(--soft-white);
   background-color: var(--primary-1);
   padding: 8rem;
   border-radius: 10px;
+  text-align: center;
 }
 
 .home-page .content a {
@@ -51,4 +52,24 @@
   background-color: var(--primary-2);
   scale: 1;
   border-color: var(--primary-2);
+}
+
+@media (width < 690px) {
+  .home-page {
+    background-image: none;
+  }
+
+  .home-page .content {
+    box-sizing: border-box;
+    padding: var(--mobile-border-padding);
+    font-size: 3rem;
+    gap: 10rem;
+    width: 100vw;
+    height: calc(100vh - var(--nav-bar-height));
+    border-radius: 0;
+  }
+
+  .home-page .content a {
+    font-size: 1.5rem;
+  }
 }

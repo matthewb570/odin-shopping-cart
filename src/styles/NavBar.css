@@ -120,3 +120,10 @@
   align-items: center;
   gap: 2rem;
 }
+
+@media (width < 690px) {
+  .nav-bar {
+    justify-content: space-between;
+    padding: 0 var(--mobile-border-padding);
+  }
+}

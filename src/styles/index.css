@@ -76,3 +76,15 @@ button.icon-button.secondary:hover .icon {
 button:active {
   scale: 1;
 }
+
+@media (width < 690px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media (width >= 690px) {
+  .mobile-only {
+    display: none !important;
+  }
+}

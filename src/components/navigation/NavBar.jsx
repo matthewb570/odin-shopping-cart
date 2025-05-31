@@ -5,6 +5,7 @@ import Badge from "../badge/Badge";
 import { NavLink } from "react-router";
 import RouterConfig from "../../router/RouterConfig";
 import FullScreenMenu from "../menu/FullScreenMenu";
+import MenuButton from "../button/MenuButton";
 
 export default function NavBar({
   isCartSideMenuOpen,
@@ -18,7 +19,7 @@ export default function NavBar({
       <span>
         <Logo />
       </span>
-      <span className="nav-links">
+      <span className="nav-links desktop-only">
         <span>
           <NavLink to={RouterConfig.HOME_PAGE_PATH}>Home</NavLink>
         </span>
@@ -31,6 +32,12 @@ export default function NavBar({
           cartItems={cartItems}
           isCartSideMenuOpen={isCartSideMenuOpen}
           setIsCartSideMenuOpen={setIsCartSideMenuOpen}
+          className={"desktop-only"}
+        />
+        <MenuButton
+          isMenuOpen={isSlidingNavMenuOpen}
+          setIsMenuOpen={setIsSlidingNavMenuOpen}
+          className={"mobile-only"}
         />
       </span>
       <FullScreenMenu
@@ -76,10 +83,12 @@ function BadgeCartButton({
   cartItems,
   isCartSideMenuOpen,
   setIsCartSideMenuOpen,
+  className,
 }) {
   return (
     <Badge
       badgeText={`${cartItems !== undefined && cartItems !== null && cartItems.length > 0 ? cartItems.length : ""}`}
+      className={className}
     >
       <CartButton
         isCartSideMenuOpen={isCartSideMenuOpen}

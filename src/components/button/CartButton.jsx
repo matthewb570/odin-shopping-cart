@@ -7,7 +7,7 @@ export default function CartButton({
 }) {
   return (
     <button
-      className="cart-button"
+      className={`cart-button`}
       onClick={() => setIsCartSideMenuOpen(!isCartSideMenuOpen)}
     >
       <Icon iconName={"shopping-cart"} />

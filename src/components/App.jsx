@@ -8,7 +8,7 @@ import useShopItems from "../hooks/useShopItems";
 function App() {
   const [isCartSideMenuOpen, setIsCartSideMenuOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-  const [isSlidingNavMenuOpen, setIsSlidingNavMenuOpen] = useState(true);
+  const [isSlidingNavMenuOpen, setIsSlidingNavMenuOpen] = useState(false);
 
   const { shopItems, shopItemsIsLoading, shopItemsError } = useShopItems();
 

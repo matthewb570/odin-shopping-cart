@@ -22,3 +22,7 @@
 .icon.plus {
   mask-image: url(../assets/plus.svg);
 }
+
+.icon.menu {
+  mask-image: url(../assets/menu.svg);
+}

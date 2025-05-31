@@ -1,0 +1,35 @@
+.full-screen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--soft-white);
+  translate: 100vw;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    translate ease 0.5s,
+    visibility ease 0.5s,
+    opacity ease 0.5s;
+  padding: var(--mobile-border-padding);
+  box-sizing: border-box;
+}
+
+.full-screen-menu.open {
+  translate: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.full-screen-menu .header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.full-screen-menu .header .title {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}

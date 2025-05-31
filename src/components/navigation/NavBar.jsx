@@ -4,11 +4,14 @@ import Icon from "../icon/Icon";
 import Badge from "../badge/Badge";
 import { NavLink } from "react-router";
 import RouterConfig from "../../router/RouterConfig";
+import FullScreenMenu from "../menu/FullScreenMenu";
 
 export default function NavBar({
   isCartSideMenuOpen,
   setIsCartSideMenuOpen,
   cartItems,
+  isSlidingNavMenuOpen,
+  setIsSlidingNavMenuOpen,
 }) {
   return (
     <nav className="nav-bar">
@@ -24,15 +27,37 @@ export default function NavBar({
         </span>
       </span>
       <span>
-        <Badge
-          badgeText={`${cartItems !== undefined && cartItems !== null && cartItems.length > 0 ? cartItems.length : ""}`}
-        >
-          <CartButton
-            isCartSideMenuOpen={isCartSideMenuOpen}
-            setIsCartSideMenuOpen={setIsCartSideMenuOpen}
-          />
-        </Badge>
+        <BadgeCartButton
+          cartItems={cartItems}
+          isCartSideMenuOpen={isCartSideMenuOpen}
+          setIsCartSideMenuOpen={setIsCartSideMenuOpen}
+        />
       </span>
+      <FullScreenMenu
+        title={"Menu"}
+        isOpen={isSlidingNavMenuOpen}
+        setIsOpen={setIsSlidingNavMenuOpen}
+      >
+        <div className="nav-links">
+          <NavLink
+            to={RouterConfig.HOME_PAGE_PATH}
+            onClick={() => setIsSlidingNavMenuOpen(false)}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to={RouterConfig.SHOP_PAGE_PATH}
+            onClick={() => setIsSlidingNavMenuOpen(false)}
+          >
+            Shop
+          </NavLink>
+        </div>
+        <BadgeCartButton
+          cartItems={cartItems}
+          isCartSideMenuOpen={isCartSideMenuOpen}
+          setIsCartSideMenuOpen={setIsCartSideMenuOpen}
+        />
+      </FullScreenMenu>
     </nav>
   );
 }
@@ -44,5 +69,22 @@ function Logo() {
       <span>Online</span>
       <span>Shop</span>
     </span>
+  );
+}
+
+function BadgeCartButton({
+  cartItems,
+  isCartSideMenuOpen,
+  setIsCartSideMenuOpen,
+}) {
+  return (
+    <Badge
+      badgeText={`${cartItems !== undefined && cartItems !== null && cartItems.length > 0 ? cartItems.length : ""}`}
+    >
+      <CartButton
+        isCartSideMenuOpen={isCartSideMenuOpen}
+        setIsCartSideMenuOpen={setIsCartSideMenuOpen}
+      />
+    </Badge>
   );
 }

@@ -6,7 +6,7 @@
   height: 100vh;
   box-sizing: border-box;
   background-color: var(--soft-white);
-  translate: var(--cart-side-menu-width) 0;
+  translate: var(--cart-side-menu-width);
   transition:
     translate ease 0.5s,
     visibility ease 0.5s,
@@ -76,6 +76,8 @@
 @media (width < 690px) {
   .cart-side-menu {
     width: 100vw;
+    translate: 100vw;
+    left: 0;
   }
 
   .cart-side-menu > .header .title {

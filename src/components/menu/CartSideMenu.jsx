@@ -1,6 +1,7 @@
 import "../../styles/CartSideMenu.css";
 import NumberUtils from "../../utils/NumberUtils";
 import CartShopItemCard from "../card/CartShopItemCard";
+import Icon from "../icon/Icon";
 
 export default function CartSideMenu({
   isOpen,
@@ -36,7 +37,12 @@ export default function CartSideMenu({
     <section className={`cart-side-menu ${isOpen ? "open" : ""}`}>
       <div className="header">
         <h2 className="title">{`Shopping Cart (${cartItemsLength})`}</h2>
-        <button onClick={() => setIsOpen(!isOpen)}>Close</button>
+        <button
+          className="icon-button primary"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <Icon iconName={"close"} />
+        </button>
       </div>
       <div className="body">
         {cartItemsLength === 0 ? (

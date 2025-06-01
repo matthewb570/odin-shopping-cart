@@ -57,7 +57,13 @@ button.secondary:hover {
   background-color: var(--primary-1);
 }
 
-button.icon-button {
+button.icon-button.primary {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+button.icon-button.secondary {
   width: var(--icon-width);
   height: var(--icon-height);
   padding: 0;

@@ -26,3 +26,7 @@
 .icon.menu {
   mask-image: url(../assets/menu.svg);
 }
+
+.icon.close {
+  mask-image: url(../assets/close.svg);
+}

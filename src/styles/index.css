@@ -1,3 +1,5 @@
+@import url(https://fonts.bunny.net/css?family=roboto:400,400i,700);
+
 :root {
   --primary-1: #669bbc;
   --primary-2: #003049;
@@ -16,6 +18,8 @@
   --icon-width: 1.5rem;
 
   --mobile-border-padding: 1rem;
+
+  font-family: "Roboto", sans-serif;
 }
 
 body {

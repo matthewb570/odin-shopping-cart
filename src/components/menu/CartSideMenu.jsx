@@ -35,7 +35,7 @@ export default function CartSideMenu({
   return (
     <section className={`cart-side-menu ${isOpen ? "open" : ""}`}>
       <div className="header">
-        <h2 className="title">{`Shopping Cart - ${cartItemsLength} Item(s)`}</h2>
+        <h2 className="title">{`Shopping Cart (${cartItemsLength})`}</h2>
         <button onClick={() => setIsOpen(!isOpen)}>Close</button>
       </div>
       <div className="body">

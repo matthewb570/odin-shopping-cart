@@ -4,6 +4,7 @@
   height: calc(100vh - var(--nav-bar-height));
   background-repeat: no-repeat;
   background-size: cover;
+  animation: fade-in 0.5s;
 }
 
 .home-page .filter {

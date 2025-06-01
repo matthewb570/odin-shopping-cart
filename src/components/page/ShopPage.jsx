@@ -13,8 +13,6 @@ export default function ShopPage() {
     setCartItems,
   } = useOutletContext();
 
-  // TODO: Re-add page fade in
-
   function handleAddToCart(shopItemId, quantity) {
     if (quantity > 0) {
       const existingCartItemIndex = cartItems.findIndex(
@@ -48,13 +46,7 @@ export default function ShopPage() {
             title={shopItem.title}
             price={shopItem.price}
             description={shopItem.description}
-            imageUrl={
-              shopItem.images !== undefined &&
-              shopItem.images !== null &&
-              shopItem.images.length > 0
-                ? shopItem.images[0]
-                : ""
-            }
+            imageUrl={shopItem.thumbnail}
             handleAddToCart={handleAddToCart}
           />
         ))}

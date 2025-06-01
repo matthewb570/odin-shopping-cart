@@ -12,10 +12,16 @@ export default function ShopItemCard({
   handleAddToCart,
 }) {
   const [quantity, setQuantity] = useState(0);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
     <div className="shop-item-card">
-      <img src={imageUrl} alt={title} />
+      <img
+        src={imageUrl}
+        alt={title}
+        className={isImageLoaded ? "" : "hidden"}
+        onLoad={() => setIsImageLoaded(true)}
+      />
       <h3>{title}</h3>
       <div className="description">{description}</div>
       <div className="footer">

@@ -6,6 +6,7 @@
   box-sizing: border-box;
   background-color: var(--primary-1);
   margin-top: var(--nav-bar-height);
+  animation: fade-in 0.5s;
 }
 
 .shop-page .card-list {

@@ -11,9 +11,16 @@
 }
 
 .shop-item-card img {
-  width: 70%;
   object-fit: contain;
   align-self: center;
+  height: 300px;
+  width: 300px;
+  opacity: 1;
+  transition: opacity ease 0.5s;
+}
+
+.shop-item-card img.hidden {
+  opacity: 0;
 }
 
 .shop-item-card h3 {

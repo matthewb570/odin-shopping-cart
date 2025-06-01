@@ -115,6 +115,10 @@
   width: 20%;
 }
 
+.nav-bar .full-screen-menu {
+  z-index: 1;
+}
+
 .nav-bar .full-screen-menu .body {
   display: flex;
   flex-direction: column;

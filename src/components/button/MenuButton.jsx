@@ -1,10 +1,9 @@
 import Icon from "../icon/Icon";
-import "../../styles/MenuButton.css";
 
 export default function MenuButton({ isMenuOpen, setIsMenuOpen, className }) {
   return (
     <button
-      className={`menu-button ${className}`}
+      className={`menu-button icon-button primary ${className}`}
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
       <Icon iconName={"menu"} />

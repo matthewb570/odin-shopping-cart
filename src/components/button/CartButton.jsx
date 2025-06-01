@@ -1,5 +1,4 @@
 import Icon from "../icon/Icon";
-import "../../styles/CartButton.css";
 
 export default function CartButton({
   isCartSideMenuOpen,
@@ -7,7 +6,7 @@ export default function CartButton({
 }) {
   return (
     <button
-      className={`cart-button`}
+      className={`cart-button icon-button primary`}
       onClick={() => setIsCartSideMenuOpen(!isCartSideMenuOpen)}
     >
       <Icon iconName={"shopping-cart"} />

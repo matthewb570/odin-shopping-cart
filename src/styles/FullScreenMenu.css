@@ -12,7 +12,6 @@
     translate ease 0.5s,
     visibility ease 0.5s,
     opacity ease 0.5s;
-  padding: var(--mobile-border-padding);
   box-sizing: border-box;
 }
 
@@ -25,11 +24,15 @@
 .full-screen-menu .header {
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
+  box-shadow: var(--standard-box-shadow);
+  padding: var(--mobile-border-padding);
+  height: var(--nav-bar-height);
+  box-sizing: border-box;
 }
 
 .full-screen-menu .header .title {
   margin: 0;
   padding: 0;
   flex: 1;
+  font-size: 2rem;
 }

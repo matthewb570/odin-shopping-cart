@@ -13,7 +13,6 @@ export default function ShopItemCard({
 }) {
   const [quantity, setQuantity] = useState(0);
 
-  // TODO: Revise as needed
   return (
     <div className="shop-item-card">
       <img src={imageUrl} alt={title} />

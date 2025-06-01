@@ -9,6 +9,7 @@ export default function FullScreenMenu({ title, isOpen, setIsOpen, children }) {
         <button
           className="icon-button primary"
           onClick={() => setIsOpen(false)}
+          aria-label="Close menu"
         >
           <Icon iconName={"close"} />
         </button>

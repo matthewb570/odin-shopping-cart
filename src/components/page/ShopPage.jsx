@@ -31,8 +31,7 @@ export default function ShopPage() {
   }
 
   return (
-    // TODO: Clean up display logic
-    <div className={"shop-page"}>
+    <section className={"shop-page"}>
       {shopItemsIsLoading
         ? ""
         : !StringUtils.isEmpty(shopItemsError)
@@ -60,6 +59,6 @@ export default function ShopPage() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -8,6 +8,7 @@ export default function CartButton({
     <button
       className={`cart-button icon-button primary`}
       onClick={() => setIsCartSideMenuOpen(!isCartSideMenuOpen)}
+      aria-label="Toggle shopping cart menu"
     >
       <Icon iconName={"shopping-cart"} />
     </button>

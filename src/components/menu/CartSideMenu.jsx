@@ -40,6 +40,7 @@ export default function CartSideMenu({
         <button
           className="icon-button primary"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Close shopping cart menu"
         >
           <Icon iconName={"close"} />
         </button>

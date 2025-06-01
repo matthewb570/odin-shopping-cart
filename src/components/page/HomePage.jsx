@@ -4,13 +4,13 @@ import RouterConfig from "../../router/RouterConfig";
 
 export default function HomePage() {
   return (
-    <div className="home-page">
+    <section className="home-page">
       <div className="filter">
         <div className="content">
           <span>Welcome to OnlineShop!</span>
           <NavLink to={RouterConfig.SHOP_PAGE_PATH}>Start Shopping</NavLink>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

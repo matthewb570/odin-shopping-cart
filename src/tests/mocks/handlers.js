@@ -2,8 +2,8 @@ import { http, HttpResponse } from "msw";
 
 export default [
   http.get("https://dummyjson.com/products", () => {
-    return HttpResponse.json(
-      [
+    return HttpResponse.json({
+      products: [
         {
           id: 13,
           title: "Bedside Table African Cherry",
@@ -21,7 +21,6 @@ export default [
           thumbnail: "",
         },
       ],
-      { status: 200 },
-    );
+    });
   }),
 ];

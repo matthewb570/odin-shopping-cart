@@ -1,4 +1,3 @@
-import { createBrowserRouter } from "react-router";
 import App from "../components/App";
 import ShopPage from "../components/page/ShopPage";
 import HomePage from "../components/page/HomePage";
@@ -6,7 +5,7 @@ import HomePage from "../components/page/HomePage";
 const HOME_PAGE_PATH = "/";
 const SHOP_PAGE_PATH = "/shop";
 
-const router = createBrowserRouter([
+const routes = [
   {
     path: HOME_PAGE_PATH,
     element: <App />,
@@ -21,6 +20,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
 
-export default { router, HOME_PAGE_PATH, SHOP_PAGE_PATH };
+export default { routes, HOME_PAGE_PATH, SHOP_PAGE_PATH };

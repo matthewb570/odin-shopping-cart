@@ -30,27 +30,27 @@ export default function ShopPage() {
 
   return (
     <section className={"shop-page"}>
-      {shopItemsIsLoading
-        ? ""
-        : !StringUtils.isEmpty(shopItemsError)
-          ? shopItemsError
-          : ""}
-
-      <div
-        className={`card-list ${shopItemsIsLoading || !StringUtils.isEmpty(shopItemsError) ? "hidden" : ""}`}
-      >
-        {shopItems.map((shopItem) => (
-          <ShopItemCard
-            key={shopItem.id}
-            id={shopItem.id}
-            title={shopItem.title}
-            price={shopItem.price}
-            description={shopItem.description}
-            imageUrl={shopItem.thumbnail}
-            handleAddToCart={handleAddToCart}
-          />
-        ))}
-      </div>
+      {shopItemsIsLoading ? (
+        ""
+      ) : !StringUtils.isEmpty(shopItemsError) ? (
+        shopItemsError
+      ) : (
+        <div className={`card-list`}>
+          {shopItems !== undefined &&
+            shopItems !== null &&
+            shopItems.map((shopItem) => (
+              <ShopItemCard
+                key={shopItem.id}
+                id={shopItem.id}
+                title={shopItem.title}
+                price={shopItem.price}
+                description={shopItem.description}
+                imageUrl={shopItem.thumbnail}
+                handleAddToCart={handleAddToCart}
+              />
+            ))}
+        </div>
+      )}
     </section>
   );
 }

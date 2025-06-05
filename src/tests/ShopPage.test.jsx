@@ -83,14 +83,32 @@ describe("Shop item card quantity management", () => {
   });
 });
 
-// describe("Cart management", () => {
-//   test("", async () => {
-//     render(<RouterProvider router={RouterConfig.router} />);
-//     expect(
-//       screen.getByRole("link", { name: "Start Shopping", hidden: false }),
-//     ).toBeInTheDocument();
-//   });
-// });
+describe("Cart management", () => {
+  test("Cart button quantity badge indicates no items in cart when the cart is empty", () => {
+    render(<RouterProvider router={createMemoryRouter(RouterConfig.routes)} />);
+    expect(
+      screen.getAllByRole("generic", {
+        name: /^0 unique products in your cart$/i,
+      })[0],
+    ).toBeInTheDocument();
+  });
+  test("Cart header shows 0 items in cart when the cart is empty", () => {
+    render(<RouterProvider router={createMemoryRouter(RouterConfig.routes)} />);
+    expect(
+      screen.getByRole("heading", { name: /^shopping cart \(0\)$/i }),
+    ).toBeInTheDocument();
+  });
+  test("Checkout button is hidden when the cart is empty", () => {
+    render(<RouterProvider router={createMemoryRouter(RouterConfig.routes)} />);
+    expect(
+      screen.queryByRole("button", { name: /proceed to checkout/i }),
+    ).toBeNull();
+  });
+  test("Cart button displays quantity badge with value 1 when 1 item is added to the cart", () => {});
+  test("Cart header shows 1 item in cart when 1 item is added to the cart", () => {});
+  test("Shop item is displayed in cart with correct quantity when 1 item is added to the cart", () => {});
+  test("Checkout button displays with correct subtotal when 1 item is added to the cart", () => {});
+});
 
 async function navigateToShopPage(user) {
   const linkStartShopping = screen.getByRole("link", {

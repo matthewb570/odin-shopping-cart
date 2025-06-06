@@ -1,7 +1,7 @@
 import { beforeAll, afterEach, afterAll, test, expect, describe } from "vitest";
 import { cleanup, render, screen, within } from "@testing-library/react";
 import server from "./mocks/server";
-import { createMemoryRouter, MemoryRouter, RouterProvider } from "react-router";
+import { createMemoryRouter, RouterProvider } from "react-router";
 import RouterConfig from "../router/RouterConfig";
 import userEvent from "@testing-library/user-event";
 
@@ -26,12 +26,18 @@ describe("Shop item card quantity management", () => {
 
     await navigateToShopPage(user);
 
-    const btnIncreaseQuantity = screen.getAllByRole("button", {
-      name: "Increase quantity",
-    })[0];
-    const txtQuantity = screen.getAllByRole("spinbutton", {
-      name: "Quantity",
-    })[0];
+    const listProducts = screen.getByRole("list", { name: /^shop products$/i });
+    const listitemFirstProduct =
+      within(listProducts).getAllByRole("listitem")[0];
+    const btnIncreaseQuantity = within(listitemFirstProduct).getByRole(
+      "button",
+      {
+        name: /^increase quantity$/i,
+      },
+    );
+    const txtQuantity = within(listitemFirstProduct).getByRole("spinbutton", {
+      name: /^quantity$/i,
+    });
 
     await user.click(btnIncreaseQuantity);
 
@@ -45,15 +51,24 @@ describe("Shop item card quantity management", () => {
 
     await navigateToShopPage(user);
 
-    const btnIncreaseQuantity = screen.getAllByRole("button", {
-      name: "Increase quantity",
-    })[0];
-    const btnDecreaseQuantity = screen.getAllByRole("button", {
-      name: "Decrease quantity",
-    })[0];
-    const txtQuantity = screen.getAllByRole("spinbutton", {
-      name: "Quantity",
-    })[0];
+    const listProducts = screen.getByRole("list", { name: /^shop products$/i });
+    const listitemFirstProduct =
+      within(listProducts).getAllByRole("listitem")[0];
+    const btnIncreaseQuantity = within(listitemFirstProduct).getByRole(
+      "button",
+      {
+        name: /^increase quantity$/i,
+      },
+    );
+    const btnDecreaseQuantity = within(listitemFirstProduct).getByRole(
+      "button",
+      {
+        name: /^decrease quantity$/i,
+      },
+    );
+    const txtQuantity = within(listitemFirstProduct).getByRole("spinbutton", {
+      name: /^quantity$/i,
+    });
 
     await user.click(btnIncreaseQuantity);
     expect(txtQuantity).toHaveValue(1);
@@ -69,12 +84,18 @@ describe("Shop item card quantity management", () => {
 
     await navigateToShopPage(user);
 
-    const btnDecreaseQuantity = screen.getAllByRole("button", {
-      name: "Decrease quantity",
-    })[0];
-    const txtQuantity = screen.getAllByRole("spinbutton", {
-      name: "Quantity",
-    })[0];
+    const listProducts = screen.getByRole("list", { name: /^shop products$/i });
+    const listitemFirstProduct =
+      within(listProducts).getAllByRole("listitem")[0];
+    const btnDecreaseQuantity = within(listitemFirstProduct).getByRole(
+      "button",
+      {
+        name: /^decrease quantity$/i,
+      },
+    );
+    const txtQuantity = within(listitemFirstProduct).getByRole("spinbutton", {
+      name: /^quantity$/i,
+    });
 
     expect(txtQuantity).toHaveValue(0);
 
@@ -92,19 +113,21 @@ describe("Cart management", () => {
       })[0],
     ).toBeInTheDocument();
   });
+
   test("Cart header shows 0 items in cart when the cart is empty", () => {
     render(<RouterProvider router={createMemoryRouter(RouterConfig.routes)} />);
     expect(
       screen.getByRole("heading", { name: /^shopping cart \(0\)$/i }),
     ).toBeInTheDocument();
   });
+
   test("Checkout button is hidden when the cart is empty", () => {
     render(<RouterProvider router={createMemoryRouter(RouterConfig.routes)} />);
     expect(
       screen.queryByRole("button", { name: /proceed to checkout/i }),
     ).toBeNull();
   });
-  //
+
   test("Cart button displays quantity badge with value 1 when 1 item is added to the cart", async () => {
     const user = userEvent.setup();
 

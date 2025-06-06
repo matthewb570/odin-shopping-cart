@@ -51,26 +51,28 @@ export default function CartSideMenu({
             <span>Looks like your cart is empty.</span>
           </div>
         ) : (
-          <div className="cart-items">
+          <ul className="cart-items" aria-label="Cart items">
             {cartItems.map((cartItem) => {
               const shopItem = shopItems.find(
                 (shopItem) => shopItem.id === cartItem.id,
               );
 
               return (
-                <CartShopItemCard
-                  key={cartItem.id}
-                  title={shopItem.title}
-                  price={shopItem.price}
-                  quantity={cartItem.quantity}
-                  setQuantity={(quantity) =>
-                    handleChangeItemQuantity(cartItem.id, quantity)
-                  }
-                  handleRemove={() => handleRemove(cartItem.id)}
-                />
+                <li>
+                  <CartShopItemCard
+                    key={cartItem.id}
+                    title={shopItem.title}
+                    price={shopItem.price}
+                    quantity={cartItem.quantity}
+                    setQuantity={(quantity) =>
+                      handleChangeItemQuantity(cartItem.id, quantity)
+                    }
+                    handleRemove={() => handleRemove(cartItem.id)}
+                  />
+                </li>
               );
             })}
-          </div>
+          </ul>
         )}
       </div>
       {cartItems.length > 0 && (

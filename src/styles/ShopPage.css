@@ -18,6 +18,8 @@
     opacity ease 0.3s,
     visibility ease 0.3s;
   opacity: 1;
+  list-style: none;
+  padding: 0;
 }
 
 .shop-page .card-list.hidden {

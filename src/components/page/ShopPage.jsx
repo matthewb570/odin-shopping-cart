@@ -35,21 +35,23 @@ export default function ShopPage() {
       ) : !StringUtils.isEmpty(shopItemsError) ? (
         shopItemsError
       ) : (
-        <div className={`card-list`}>
+        <ul className={`card-list`} aria-label="Shop products">
           {shopItems !== undefined &&
             shopItems !== null &&
             shopItems.map((shopItem) => (
-              <ShopItemCard
-                key={shopItem.id}
-                id={shopItem.id}
-                title={shopItem.title}
-                price={shopItem.price}
-                description={shopItem.description}
-                imageUrl={shopItem.thumbnail}
-                handleAddToCart={handleAddToCart}
-              />
+              <li>
+                <ShopItemCard
+                  key={shopItem.id}
+                  id={shopItem.id}
+                  title={shopItem.title}
+                  price={shopItem.price}
+                  description={shopItem.description}
+                  imageUrl={shopItem.thumbnail}
+                  handleAddToCart={handleAddToCart}
+                />
+              </li>
             ))}
-        </div>
+        </ul>
       )}
     </section>
   );

@@ -89,7 +89,7 @@ function BadgeCartButton({
     <Badge
       badgeText={`${cartItems !== undefined && cartItems !== null && cartItems.length > 0 ? cartItems.length : ""}`}
       className={className}
-      label={`${cartItems.length} unique products in your cart`}
+      label={`${cartItems.length} unique ${cartItems.length === 1 ? "product" : "products"} in your cart`}
     >
       <CartButton
         isCartSideMenuOpen={isCartSideMenuOpen}

@@ -39,9 +39,8 @@ export default function ShopPage() {
           {shopItems !== undefined &&
             shopItems !== null &&
             shopItems.map((shopItem) => (
-              <li>
+              <li key={shopItem.id}>
                 <ShopItemCard
-                  key={shopItem.id}
                   id={shopItem.id}
                   title={shopItem.title}
                   price={shopItem.price}

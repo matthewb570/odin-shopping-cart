@@ -58,9 +58,8 @@ export default function CartSideMenu({
               );
 
               return (
-                <li>
+                <li key={cartItem.id}>
                   <CartShopItemCard
-                    key={cartItem.id}
                     title={shopItem.title}
                     price={shopItem.price}
                     quantity={cartItem.quantity}

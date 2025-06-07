@@ -23,6 +23,10 @@
   margin: 0;
 }
 
+.shop-page .card-list > li {
+  display: flex;
+}
+
 .shop-page .card-list.hidden {
   opacity: 0;
   visibility: hidden;

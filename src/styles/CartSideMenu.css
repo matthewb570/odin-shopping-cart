@@ -3,14 +3,15 @@
   top: 0;
   right: 0;
   width: var(--cart-side-menu-width);
-  height: 100vh;
+  height: 100dvh;
   box-sizing: border-box;
   background-color: var(--soft-white);
   translate: var(--cart-side-menu-width);
   transition:
     translate ease 0.5s,
     visibility ease 0.5s,
-    opacity ease 0.5s;
+    opacity ease 0.5s,
+    height ease 0.5s;
   box-shadow: var(--standard-box-shadow);
   visibility: hidden;
   opacity: 0;
@@ -64,6 +65,7 @@
   gap: 1rem;
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .cart-side-menu > .footer {

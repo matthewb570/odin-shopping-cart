@@ -8,3 +8,4 @@ This project demonstrates knowledge of key React concepts, including custom hook
 
 - Storefront photo by <a href="https://unsplash.com/@paulmelki?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paul Melki</a> on <a href="https://unsplash.com/photos/gray-wooden-doors--BvBZKXwQo8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 - Icons by <a href="https://pictogrammers.com/library/mdi/">Pictogrammers</a>
+- Shop data by <a href="dummyjson.com">DummyJSON</a>
